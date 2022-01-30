@@ -31,3 +31,9 @@ steps:
     script: |
       # Write your PowerShell commands here.   
       Write-Host "COMPUTER NAME"  + $env:COMPUTERNAME
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'drop'
+    publishLocation: 'pipeline'
